@@ -1,3 +1,6 @@
+#This script tidies "Human Activity Recognition Using Smartphones Dataset" Project carried by SmartLab
+#Script returns mean values for Subjects and Activities variables for mean and standard deviation measurements
+
 #Setting working directory             
 setwd("./UCI HAR Dataset/")
 

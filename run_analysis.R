@@ -44,6 +44,12 @@ colnames(mean_std_labeled_act)[1:3]<-c("Subjects","Activities",1)
 #Set column names for rest of the columns
 colnames(mean_std_labeled_act)[3:81]<-as.character(features[as.integer(colnames(mean_std_labeled_act)[3:81]),2])
 
+#Set descriptive variable names
+names(mean_std_labeled_act)<-gsub("^t","Time",names(mean_std_labeled_act))
+names(mean_std_labeled_act)<-gsub("^f","Frequency",names(mean_std_labeled_act))
+names(mean_std_labeled_act)<-gsub("Acc","Acceleration",names(mean_std_labeled_act))
+names(mean_std_labeled_act)<-gsub("Gyro","Gyroscope",names(mean_std_labeled_act))
+names(mean_std_labeled_act)<-gsub("Mag","Magnitude",names(mean_std_labeled_act))
 
 
 #Step 5: From the data set in step 4, creates a second, independent tidy data set 
@@ -55,4 +61,6 @@ mean_subj_act<-group_by(mean_std_labeled_act,Subjects,Activities)
 #Applying mean function for each group(Subject and Activities)
 mean_subj_act<- summarise_each(mean_subj_act,mean)
 
+
+write.table( mean_subj_act,file = "tidy_data.txt" ,row.names = FALSE)
 

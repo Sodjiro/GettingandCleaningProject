@@ -47,7 +47,7 @@ colnames(mean_std_labeled_act)[3:81]<-as.character(features[as.integer(colnames(
 #Set descriptive variable names
 names(mean_std_labeled_act)<-gsub("^t","Time",names(mean_std_labeled_act))
 names(mean_std_labeled_act)<-gsub("^f","Frequency",names(mean_std_labeled_act))
-names(mean_std_labeled_act)<-gsub("Acc","Acceleration",names(mean_std_labeled_act))
+names(mean_std_labeled_act)<-gsub("Acc","Accelerometer",names(mean_std_labeled_act))
 names(mean_std_labeled_act)<-gsub("Gyro","Gyroscope",names(mean_std_labeled_act))
 names(mean_std_labeled_act)<-gsub("Mag","Magnitude",names(mean_std_labeled_act))
 

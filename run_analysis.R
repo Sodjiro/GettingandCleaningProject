@@ -50,7 +50,7 @@ names(mean_std_labeled_act)<-gsub("^f","Frequency",names(mean_std_labeled_act))
 names(mean_std_labeled_act)<-gsub("Acc","Accelerometer",names(mean_std_labeled_act))
 names(mean_std_labeled_act)<-gsub("Gyro","Gyroscope",names(mean_std_labeled_act))
 names(mean_std_labeled_act)<-gsub("Mag","Magnitude",names(mean_std_labeled_act))
-
+names(mean_std_labeled_act)<-gsub("[()]","",names(mean_std_labeled_act))
 
 #Step 5: From the data set in step 4, creates a second, independent tidy data set 
 #with the average of each variable for each activity and each subject.
